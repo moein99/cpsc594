@@ -6,3 +6,6 @@ urlpatterns = [
     path("members/signup", Signup.as_view(), name="signup"),
     path("members/login", Login.as_view(), name="login"),
 ]
+
+
+
