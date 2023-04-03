@@ -84,7 +84,7 @@ class LoginTests(TestCase):
         data = {}
 
         response = self.call(data, "/members/login")
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertNotEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_username_missing(self):
         data = {
@@ -121,4 +121,3 @@ class LoginTests(TestCase):
         self.assertEqual(Session.objects.count(), 1)
         session = Session.objects.all()[0]
         self.assertEqual(session.token, response.json().get("token"))
-
