@@ -121,4 +121,3 @@ class LoginTests(TestCase):
         self.assertEqual(Session.objects.count(), 1)
         session = Session.objects.all()[0]
         self.assertEqual(session.token, response.json().get("token"))
-
